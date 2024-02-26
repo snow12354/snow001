@@ -1,0 +1,41 @@
+跳到下个View
+
+nextWebView = [[WEBViewController alloc] initWithNibName:@"WEBViewController" bundle:nil];
+
+[self presentModalViewController:nextWebView animated:YES];
+
+//创建一个UIBarButtonItem右边按钮
+
+UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"右边" style:UIBarButtonItemStyleDone target:self action:@selector(clickRightButton)];
+
+[self.navigationItem setRightBarButtonItem:rightButton];
+
+设置navigationBar隐藏
+
+self.navigationController.navigationBarHidden = YES;//
+
+iOS开发之UIlabel多行文字自动换行 （自动折行）
+
+UIView *footerView = [[UIView alloc]initWithFrame:CGRectMake(10, 100, 300, 180)];
+
+UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(10, 100, 300, 150)];
+
+label.text = @"Hello world! Hello world!Hello world! Hello world! Hello world! Hello world! Hello world! Hello world!Hello world! Hello world! Hello world! Hello world! Hello world! Helloworld!";
+
+//背景颜色为红色
+
+label.backgroundColor = [UIColor redColor];
+
+//设置字体颜色为白色
+
+label.textColor = [UIColor whiteColor];
+
+//文字居中显示
+
+label.textAlignment = UITextAlignmentCenter;
+
+//自动折行设置
+
+label.lineBreakMode = UILineBreakModeWordWrap;
+
+label.numberOfLines = 0;
