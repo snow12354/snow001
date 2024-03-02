@@ -2,3 +2,5 @@
 对于特定实现可能还需要添加其他字段。如果需要添加其他字段，请添加所需的方法以获得和设置这些值。
 
 代码示例 8 SampleUserImpl.java
+
+SampleUserImpl.java
