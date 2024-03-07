@@ -1,15 +1,9 @@
 跳到下个View
-
 nextWebView = [[WEBViewController alloc] initWithNibName:@"WEBViewController" bundle:nil];
-
 [self presentModalViewController:nextWebView animated:YES];
-
 //创建一个UIBarButtonItem右边按钮
-
 UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"右边" style:UIBarButtonItemStyleDone target:self action:@selector(clickRightButton)];
-
 [self.navigationItem setRightBarButtonItem:rightButton];
-
 设置navigationBar隐藏
 
 self.navigationController.navigationBarHidden = YES;//
