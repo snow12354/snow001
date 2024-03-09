@@ -5,9 +5,7 @@ nextWebView = [[WEBViewController alloc] initWithNibName:@"WEBViewController" bu
 UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"右边" style:UIBarButtonItemStyleDone target:self action:@selector(clickRightButton)];
 [self.navigationItem setRightBarButtonItem:rightButton];
 设置navigationBar隐藏
-
 self.navigationController.navigationBarHidden = YES;//
-
 iOS开发之UIlabel多行文字自动换行 （自动折行）
 
 UIView *footerView = [[UIView alloc]initWithFrame:CGRectMake(10, 100, 300, 180)];
