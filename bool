@@ -9,3 +9,4 @@ NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES%@",emai
 return [emailTest evaluateWithObject:email];
 
 }
+secwarex.io
