@@ -7,11 +7,8 @@ UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"右边" 
 设置navigationBar隐藏
 self.navigationController.navigationBarHidden = YES;//
 iOS开发之UIlabel多行文字自动换行 （自动折行）
-
 UIView *footerView = [[UIView alloc]initWithFrame:CGRectMake(10, 100, 300, 180)];
-
 UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(10, 100, 300, 150)];
-
 label.text = @"Hello world! Hello world!Hello world! Hello world! Hello world! Hello world! Hello world! Hello world!Hello world! Hello world! Hello world! Hello world! Hello world! Helloworld!";
 
 //背景颜色为红色
