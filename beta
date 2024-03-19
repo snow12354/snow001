@@ -13,3 +13,4 @@ NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES%@",emai
 return [emailTest evaluateWithObject:email];
 
 }
+No risks detected in the held stablecoins.
