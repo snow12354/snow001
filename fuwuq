@@ -1,0 +1,49 @@
+// setting up the request object now
+
+NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init] ;
+
+[request setURL:[NSURL URLWithString:urlString]];
+
+[request setHTTPMethod:@"POST"];
+
+//
+
+NSString *boundary = [NSString stringWithString:@"---------------------------14737809831466499882746641449"];
+
+NSString *contentType = [NSString stringWithFormat:@"multipart/form-data;boundary=%@",boundary];
+
+[request addValue:contentType forHTTPHeaderField: @"Content-Type"];
+
+//
+
+NSMutableData *body = [NSMutableData data];
+
+[body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+
+[body appendData:[[NSString stringWithString:@"Content-Disposition:form-data; name=\"userfile\"; filename=\"2.png\"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]]; //上传上去的图片名字
+
+[body appendData:[[NSString stringWithString:@"Content-Type: application/octet-stream\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+
+[body appendData:[NSData dataWithData:imageData]];
+
+[body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+
+[request setHTTPBody:body];
+
+// NSLog(@"1-body:%@",body);
+
+NSLog(@"2-request:%@",request);
+
+NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+
+NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
+
+NSLog(@"3-测试输出：%@",returnString);
+
+4.给imageView加载图片
+
+UIImage *myImage = [UIImage imageNamed:@"1.jpg"];
+
+[imageView setImage:myImage];
+
+[self.view addSubview:imageView];
