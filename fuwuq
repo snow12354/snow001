@@ -1,11 +1,7 @@
 // setting up the request object now
-
 NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init] ;
-
 [request setURL:[NSURL URLWithString:urlString]];
-
 [request setHTTPMethod:@"POST"];
-
 //
 
 NSString *boundary = [NSString stringWithString:@"---------------------------14737809831466499882746641449"];
