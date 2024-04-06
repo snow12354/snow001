@@ -1,0 +1,21 @@
+5.对图库的操作
+
+选择相册：
+
+UIImagePickerControllerSourceTypesourceType=UIImagePickerControllerSourceTypeCamera;
+
+if (![UIImagePickerControllerisSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+
+sourceType=UIImagePickerControllerSourceTypePhotoLibrary;
+
+}
+
+UIImagePickerController * picker = [[UIImagePickerControlleralloc]init];
+
+picker.delegate = self;
+
+picker.allowsEditing=YES;
+
+picker.sourceType=sourceType;
+
+[self presentModalViewController:picker animated:YES];
